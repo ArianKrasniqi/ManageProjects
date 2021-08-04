@@ -1,7 +1,7 @@
-import Landing from 'views/Landing/landing';
-import User from 'views/User/user';
-import ProjectCreate from 'views/Project/Create/create';
-import ProjectEdit from 'views/Project/Edit/edit';
+import Landing from 'views/Landing/Landing';
+import User from 'views/User/User';
+import ProjectCreate from 'views/Project/Create/Create';
+import ProjectEdit from 'views/Project/Edit/Edit';
 
 // Some folks find value in a centralized route config.
 // A route config is just data. React is great at mapping
