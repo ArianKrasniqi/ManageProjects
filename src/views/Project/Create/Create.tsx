@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import Form from "../Form/Form";
 import Dialog from "components/Dialog/Dialog";
 import DialogContentText from "@material-ui/core/DialogContentText";
+import { useSelector, shallowEqual } from "react-redux"
 import { useDispatch } from "react-redux";
 import { Dispatch } from "redux";
 import { addProject } from "redux/projects/actionCreators";
@@ -25,6 +26,11 @@ const Create = () => {
   });
 
   const history = useHistory();
+
+  const users: readonly IUser[] = useSelector(
+    (state: UsersState | any) => state.users.users,
+    shallowEqual
+  )
 
   const dispatch: Dispatch<any> = useDispatch()
 
@@ -50,7 +56,7 @@ const Create = () => {
       <DialogContentText className={classes.dialogContent}>
         Here You can create a new Project
       </DialogContentText>
-      <Form handleOnChangeProject={(e: any) => handleOnChangeProject(e)} project={project}/>
+      <Form handleOnChangeProject={(e: any) => handleOnChangeProject(e)} project={project} users={users}/>
     </Dialog>
   )
 }

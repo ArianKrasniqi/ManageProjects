@@ -1,6 +1,6 @@
 import * as actionTypes from "./actionTypes"
 
-export function addArticle(user: IUser) {
+export function addUser(user: IUser) {
   const action: UserAction = {
     type: actionTypes.ADD_USER,
     user,

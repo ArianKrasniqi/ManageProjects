@@ -4,7 +4,6 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import users from "data/users";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Form = ({handleOnChangeProject, project}: any) => {
+const Form = ({handleOnChangeProject, project, users}: any) => {
   const classes = useStyles();
 
   const handleChange = (event: any) => {
@@ -62,7 +61,7 @@ const Form = ({handleOnChangeProject, project}: any) => {
               "data-testid": "owner"
             }}
           >
-            {users.map((user, index) => (
+            {users.map((user: IUser, index: number) => (
               <MenuItem data-testid={`option-${index+1}`} key={index} value={user.id}>{user.name}</MenuItem>
             ))}
           </Select>

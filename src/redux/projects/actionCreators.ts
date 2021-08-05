@@ -6,17 +6,8 @@ export function addProject(project: IProject) {
     project,
   }
 
-  // return action;
   return simulateHttpRequest(action)
 }
-
-// export function addProject2(project: IProject) {
-//   return (dispatch: ProjectDispatchType) => {
-//     setTimeout(() => {
-//       dispatch(addProject(project))
-//     }, 500)
-//   }
-// }
 
 export function editProject(project: IProject) {
   const action: ProjectAction = {

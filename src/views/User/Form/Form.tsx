@@ -11,8 +11,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Form = () => {
+const Form = ({handleOnChangeUser, user}: any) => {
   const classes = useStyles();
+
+  const handleChange = (event: any) => {
+    handleOnChangeUser(event);
+  };
 
   return (
       <form className={classes.root} noValidate autoComplete="off">
@@ -22,6 +26,9 @@ const Form = () => {
           id="name"
           label="Name"
           type="name"
+          name="name"
+          value={user.name}
+          onChange={handleChange}
           fullWidth
         />
         <TextField
@@ -30,6 +37,9 @@ const Form = () => {
           id="email"
           label="Email Address"
           type="email"
+          name="email"
+          value={user.email}
+          onChange={handleChange}
           fullWidth
         />
       </form>
