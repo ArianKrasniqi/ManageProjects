@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { useHistory } from "react-router-dom";
 import Form from "../Form/Form";
 import Dialog from "components/Dialog/Dialog";
 import DialogContentText from "@material-ui/core/DialogContentText";
@@ -14,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const Create = ({history}: any) => {
+const Create = () => {
   const classes = useStyles();
   const [project, setProject] = useState({
     id: 1,
@@ -22,6 +23,8 @@ const Create = ({history}: any) => {
     description: "",
     owner: ""
   });
+
+  const history = useHistory();
 
   const dispatch: Dispatch<any> = useDispatch()
 
