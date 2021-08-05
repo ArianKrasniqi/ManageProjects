@@ -6,7 +6,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
-const FormDialog = ({history, handleSubmit, children}: any) => {
+const FormDialog = ({ history, handleSubmit, children }: any) => {
   const [open, setOpen] = React.useState(true);
 
   const handleClickOpen = () => {
@@ -15,7 +15,7 @@ const FormDialog = ({history, handleSubmit, children}: any) => {
 
   const handleClose = () => {
     setOpen(false);
-    history.push('/');
+    history.push("/");
   };
 
   return (
@@ -26,9 +26,7 @@ const FormDialog = ({history, handleSubmit, children}: any) => {
         aria-labelledby="form-dialog-title"
       >
         <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
-        <DialogContent>
-          {children}
-        </DialogContent>
+        <DialogContent>{children}</DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
             Cancel
@@ -40,6 +38,6 @@ const FormDialog = ({history, handleSubmit, children}: any) => {
       </Dialog>
     </div>
   );
-}
+};
 
 export default withRouter(FormDialog);

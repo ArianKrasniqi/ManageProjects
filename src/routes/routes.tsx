@@ -3,11 +3,9 @@ import routes from "./config";
 
 const Routes = () => (
   <Router>
-      {routes.map((route, i) => {
-        return (
-          <Route key={i} {...route} render={route.component} />
-        );
-      })}
+    {routes.map((route, i) => {
+      return <Route key={i} {...route} render={route.component} />;
+    })}
   </Router>
 );
 

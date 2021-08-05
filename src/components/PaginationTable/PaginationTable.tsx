@@ -20,11 +20,11 @@ const useStyles2 = makeStyles({
     minWidth: 500,
   },
   edit: {
-    width: '100px',
-    '&:hover': {
-      cursor: 'pointer',
-    }
-  }
+    width: "100px",
+    "&:hover": {
+      cursor: "pointer",
+    },
+  },
 });
 
 const PaginationTable = ({ data: rows, history }: any) => {
@@ -46,34 +46,27 @@ const PaginationTable = ({ data: rows, history }: any) => {
 
   const handleProjectEdit = (id: any) => {
     history.push(`/project/edit/${id}`);
-  }
+  };
 
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="custom pagination table">
         {Object.keys(rows[0]).map((key) => (
-          <TableCell>
-            {key}
-          </TableCell>
+          <TableCell>{key}</TableCell>
         ))}
-        <TableCell align="center">
-          Edit
-        </TableCell>
+        <TableCell align="center">Edit</TableCell>
         <TableBody>
           {(rowsPerPage > 0
             ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             : rows
           ).map((row: any, index: any) => (
             <TableRow key={index}>
-
               {Object.keys(row).map((key) => (
-                <TableCell>
-                  {row[key]}
-                </TableCell>
+                <TableCell>{row[key]}</TableCell>
               ))}
               <TableCell align="center">
                 <div className={classes.edit}>
-                  <Edit onClick={() => handleProjectEdit(row.id)}/>
+                  <Edit onClick={() => handleProjectEdit(row.id)} />
                 </div>
               </TableCell>
             </TableRow>

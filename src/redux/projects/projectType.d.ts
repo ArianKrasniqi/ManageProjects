@@ -1,17 +1,17 @@
 interface IProject {
-  id: number
-  name: string
-  description: string,
-  owner: string
+  id: number;
+  name: string;
+  description: string;
+  owner: string;
 }
 
 type ProjectsState = {
-  projects: IProject[]
-}
+  projects: IProject[];
+};
 
 type ProjectAction = {
-  type: string
-  project: IProject
-}
+  type: string;
+  project: IProject;
+};
 
-type ProjectDispatchType = (args: ProjectAction) => ProjectAction
+type ProjectDispatchType = (args: ProjectAction) => ProjectAction;

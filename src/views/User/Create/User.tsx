@@ -11,30 +11,30 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   dialogContent: {
-    minWidth: '50vw',
-  }
-}))
+    minWidth: "50vw",
+  },
+}));
 
 const Create = () => {
   const classes = useStyles();
   const [user, setUser] = useState({
     id: 1,
     name: "",
-    email: ""
+    email: "",
   });
 
   const history = useHistory();
 
-  const dispatch: Dispatch<any> = useDispatch()
+  const dispatch: Dispatch<any> = useDispatch();
 
   const saveUser = useCallback(
     (user: IUser) => dispatch(addUser(user)),
     [dispatch]
-  )
+  );
 
   const handleSubmit = () => {
     saveUser(user);
-    history.push('/');
+    history.push("/");
   };
 
   const handleOnChangeUser = (e: any): void => {
@@ -42,17 +42,20 @@ const Create = () => {
     setUser({
       ...user,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
   return (
     <Dialog handleSubmit={handleSubmit}>
       <DialogContentText className={classes.dialogContent}>
         Here you are creating a new User
       </DialogContentText>
-      <Form handleOnChangeUser={(e: any) => handleOnChangeUser(e)} user={user}/>
+      <Form
+        handleOnChangeUser={(e: any) => handleOnChangeUser(e)}
+        user={user}
+      />
     </Dialog>
-  )
-}
+  );
+};
 
 export default Create;

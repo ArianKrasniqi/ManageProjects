@@ -74,6 +74,6 @@ const TablePaginationActions = (props: any) => {
       </IconButton>
     </div>
   );
-}
+};
 
 export default TablePaginationActions;

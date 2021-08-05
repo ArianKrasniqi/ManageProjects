@@ -1,9 +1,9 @@
-import * as actionTypes from "./actionTypes"
-import users from 'data/users';
+import * as actionTypes from "./actionTypes";
+import users from "data/users";
 
 const initialState: UsersState = {
   users,
-}
+};
 
 const reducer = (
   state: UsersState = initialState,
@@ -15,13 +15,13 @@ const reducer = (
         id: Math.random(), // not really unique
         name: action.user.name,
         email: action.user.email,
-      }
+      };
       return {
         ...state,
         users: state.users.concat(newUser),
-      }
+      };
   }
-  return state
-}
+  return state;
+};
 
-export default reducer
+export default reducer;

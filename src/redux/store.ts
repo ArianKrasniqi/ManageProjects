@@ -6,13 +6,16 @@ import usersReducer from "./users/reducer";
 
 export const rootReducer = combineReducers({
   projects: projectsReducer,
-  users: usersReducer
+  users: usersReducer,
 });
 
-export type StoreType = Store<ProjectsState | UsersState | EmptyObject, ProjectAction | UserAction> & {
+export type StoreType = Store<
+  ProjectsState | UsersState | EmptyObject,
+  ProjectAction | UserAction
+> & {
   dispatch: UserDispatchType | ProjectDispatchType;
-}
+};
 
-const store: StoreType  = createStore(rootReducer, applyMiddleware(thunk))
+const store: StoreType = createStore(rootReducer, applyMiddleware(thunk));
 
 export default store;

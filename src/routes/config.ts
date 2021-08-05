@@ -1,7 +1,7 @@
-import Landing from 'views/Landing/Landing';
-import UserCreate from 'views/User/Create/User';
-import ProjectCreate from 'views/Project/Create/Create';
-import ProjectEdit from 'views/Project/Edit/Edit';
+import Landing from "views/Landing/Landing";
+import UserCreate from "views/User/Create/User";
+import ProjectCreate from "views/Project/Create/Create";
+import ProjectEdit from "views/Project/Edit/Edit";
 
 // Some folks find value in a centralized route config.
 // A route config is just data. React is great at mapping
@@ -14,7 +14,6 @@ export default [
   {
     path: "/",
     component: Landing,
-
   },
   {
     path: "/user/create",
@@ -23,10 +22,9 @@ export default [
   {
     path: "/project/create",
     component: ProjectCreate,
-    
   },
   {
     path: "/project/edit/:id",
     component: ProjectEdit,
-  }
+  },
 ];
