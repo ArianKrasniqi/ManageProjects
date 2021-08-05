@@ -10,23 +10,21 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const Edit = ({match}: any) => {
+const Create = () => {
   const classes = useStyles();
 
-  const id = match.params.id;
-
   const handleSubmit = () => {
-    console.log('handleSubmit for Edit');
+    console.log('handleSubmit for Create');
   };
 
   return (
     <Dialog handleSubmit={handleSubmit}>
       <DialogContentText className={classes.dialogContent}>
-        Here you are editing project with id #{id}
+        Here you are creating a new User
       </DialogContentText>
       <Form />
     </Dialog>
   )
 }
 
-export default Edit;
+export default Create;

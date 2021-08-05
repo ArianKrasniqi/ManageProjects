@@ -1,5 +1,5 @@
 import Landing from 'views/Landing/Landing';
-import User from 'views/User/User';
+import UserCreate from 'views/User/Create/User';
 import ProjectCreate from 'views/Project/Create/Create';
 import ProjectEdit from 'views/Project/Edit/Edit';
 
@@ -14,20 +14,19 @@ export default [
   {
     path: "/",
     component: Landing,
-    exact: true
+
   },
   {
     path: "/user/create",
-    component: User,
-    exact: true
+    component: UserCreate,
   },
   {
     path: "/project/create",
     component: ProjectCreate,
-    exact: true
+    
   },
   {
-    path: "/project/edit",
+    path: "/project/edit/:id",
     component: ProjectEdit,
   }
 ];
