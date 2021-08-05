@@ -3,6 +3,8 @@
 An application used to manage projects, built with React, Typescript, Redux Thunk and MaterialUI.
 
 ## Screen Shot
+![image](https://user-images.githubusercontent.com/34164882/128313222-5473eae5-151b-486d-aa91-62e87c07a0c6.png)
+![image](https://user-images.githubusercontent.com/34164882/128313261-5e7f560a-8bf9-4120-97d6-e3be65f52f2a.png)
 
 ## Available Scripts
 
