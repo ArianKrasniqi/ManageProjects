@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
@@ -18,12 +18,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Form = (props: any) => {
+const Form = ({handleOnChangeProject, project}: any) => {
   const classes = useStyles();
-  const [age, setAge] = useState('');
 
   const handleChange = (event: any) => {
-    setAge(event.target.value);
+    handleOnChangeProject(event);
   };
 
   return (
@@ -32,24 +31,29 @@ const Form = (props: any) => {
           autoFocus
           margin="dense"
           id="name"
-          label="Email Address"
-          type="email"
+          name="name"
+          label="Project Name"
+          type="name"
           fullWidth
+          onChange={handleOnChangeProject}
         />
         <TextField
           autoFocus
           margin="dense"
-          id="name"
-          label="Email Address"
-          type="email"
+          id="description"
+          name="description"
+          label="Project Description"
+          type="description"
           fullWidth
+          onChange={handleOnChangeProject}
         />
         <FormControl >
           <InputLabel id="demo-simple-select-label">Owner</InputLabel>
           <Select
             labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={age}
+            id="owner"
+            name="owner"
+            value={project?.owner}
             onChange={handleChange}
           >
             {users.map((user) => (

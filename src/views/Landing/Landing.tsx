@@ -2,7 +2,7 @@ import { Search as SearchIcon, PersonAdd, PostAdd } from "@material-ui/icons";
 import InputBase from "@material-ui/core/InputBase";
 import { Link } from "react-router-dom";
 import PaginationTable from "components/PaginationTable/PaginationTable";
-import projects from "data/projects";
+import { useSelector, shallowEqual } from "react-redux"
 
 import { alpha, makeStyles } from "@material-ui/core/styles";
 
@@ -67,6 +67,11 @@ const useStyles = makeStyles((theme) => ({
 
 const Landing = () => {
   const classes = useStyles();
+
+  const projects: readonly IProject[] = useSelector(
+    (state: ProjectsState | any) => state.projects.projects,
+    shallowEqual
+  )
 
   return (
     <div className={classes.container}>
