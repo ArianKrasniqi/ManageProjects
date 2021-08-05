@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import InputLabel from '@material-ui/core/InputLabel';
@@ -26,14 +24,16 @@ const Form = ({handleOnChangeProject, project}: any) => {
   };
 
   return (
-      <form className={classes.root} noValidate autoComplete="off">
+      <form data-testid="form" className={classes.root} noValidate autoComplete="off">
         <TextField
           autoFocus
           margin="dense"
           id="name"
           name="name"
+          inputProps={{  "data-testid":"project-name" }}
           label="Project Name"
-          type="name"
+          type="text"
+          value={project?.name}
           fullWidth
           onChange={handleOnChangeProject}
         />
@@ -42,8 +42,10 @@ const Form = ({handleOnChangeProject, project}: any) => {
           margin="dense"
           id="description"
           name="description"
+          inputProps={{  "data-testid":"project-description" }}
           label="Project Description"
-          type="description"
+          type="text"
+          value={project?.description}
           fullWidth
           onChange={handleOnChangeProject}
         />
@@ -55,9 +57,13 @@ const Form = ({handleOnChangeProject, project}: any) => {
             name="owner"
             value={project?.owner}
             onChange={handleChange}
+            // native
+            inputProps={{
+              "data-testid": "owner"
+            }}
           >
-            {users.map((user) => (
-              <MenuItem value={user.id}>{user.name}</MenuItem>
+            {users.map((user, index) => (
+              <MenuItem data-testid={`option-${index+1}`} key={index} value={user.id}>{user.name}</MenuItem>
             ))}
           </Select>
         </FormControl>
