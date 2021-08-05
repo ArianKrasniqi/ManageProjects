@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An application used to manage projects, built with React, Typescript, Redux Thunk and MaterialUI.
+
+## Screen Shot
 
 ## Available Scripts
 
