@@ -6,31 +6,31 @@ export default [
         owner: 'user_id'
     },
     {
-        id: 1,
+        id: 2,
         name: 'First Project 2',
         description: 'Project Description 2',
         owner: '3'
     },
     {
-        id: 1,
+        id: 3,
         name: 'First Project',
         description: 'Project Description',
         owner: '5'
     },
     {
-        id: 1,
+        id: 4,
         name: 'First Project',
         description: 'Project Description',
         owner: '6'
     },
     {
-        id: 1,
+        id: 5,
         name: 'First Project',
         description: 'Project Description',
         owner: 'user_id'
     },
     {
-        id: 1,
+        id: 6,
         name: 'First Project',
         description: 'Project Description',
         owner: 'user_id'

@@ -84,10 +84,10 @@ const Landing = () => {
             inputProps={{ "aria-label": "search" }}
           />
         </div>
-        <Link className={classes.addUser} to="">
+        <Link className={classes.addUser} to="/user/create">
           <PersonAdd />
         </Link>
-        <Link className={classes.addProject} to="">
+        <Link className={classes.addProject} to="/project/create">
           <PostAdd />
         </Link>
       </div>

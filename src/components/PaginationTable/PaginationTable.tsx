@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { withRouter } from "react-router";
 
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -19,11 +20,14 @@ const useStyles2 = makeStyles({
     minWidth: 500,
   },
   edit: {
-    width: '100px'
+    width: '100px',
+    '&:hover': {
+      cursor: 'pointer',
+    }
   }
 });
 
-const PaginationTable = ({ data: rows }: any) => {
+const PaginationTable = ({ data: rows, history }: any) => {
   const classes = useStyles2();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -39,6 +43,10 @@ const PaginationTable = ({ data: rows }: any) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
+
+  const handleProjectEdit = (id: any) => {
+    history.push(`/project/edit/${id}`);
+  }
 
   return (
     <TableContainer component={Paper}>
@@ -65,7 +73,7 @@ const PaginationTable = ({ data: rows }: any) => {
               ))}
               <TableCell align="center">
                 <div className={classes.edit}>
-                  <Edit />
+                  <Edit onClick={() => handleProjectEdit(row.id)}/>
                 </div>
               </TableCell>
             </TableRow>
@@ -100,4 +108,4 @@ const PaginationTable = ({ data: rows }: any) => {
   );
 };
 
-export default PaginationTable;
+export default withRouter(PaginationTable);
